@@ -17,7 +17,7 @@ function App() {
             <Row>
               <Col span={24}>
               <div className="flex-col self-start p-5">
-              <p className="p-5 flex self-start"> {foodItem.name} </p>
+              <p className=" text-lg font-semibold flex self-start"> {foodItem.name} </p>
               <img src={foodItem.image} width={120} />
             </div>
               </Col>

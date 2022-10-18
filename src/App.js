@@ -7,14 +7,25 @@ import FoodBox from "./components/FoodBox";
 function App() {
   return (
     <>
-      <FoodBox
-        food={{
-          name: "Orange",
-          calories: 85,
-          image: "https://i.imgur.com/abKGOcv.jpg",
-          servings: 1,
-        }}
-      />
+      <h1 className=" text-xl font-bold text-center py-5">Food List</h1>
+      <div className="container-fluid">
+        <div className="block featureBlock bgGray">
+          <Row gutter={[16, 16]}>
+            {foods.map((data, i) => {
+              return (
+                <FoodBox
+                  food={{
+                    name: `${data.name}`,
+                    calories: `${data.calories}`,
+                    image: `${data.image}`,
+                    servings: `${data.servings}`,
+                  }}
+                />
+              );
+            })}
+          </Row>
+        </div>
+      </div>
     </>
   );
 }

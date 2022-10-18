@@ -24,14 +24,25 @@ function App() {
 
   function handleAddForm(value){
     setFood([value, ...foods])
+    setFilterFood([value, ...foods])
   }
+
+  function handleDelete(index){
+    let clonedFoods = structuredClone(foods)
+    clonedFoods.splice(index, 1)
+    setFood(clonedFoods)
+    setFilterFood(clonedFoods)
+  }
+  
 
 
   return (
 <>
     <div>
     <AddFoodForm handleAddForm={handleAddForm} />
+
     <Search handleSearch={handleSearch}/>
+    
     </div>
     <div id='list'>
     
@@ -43,11 +54,16 @@ function App() {
 		          image= {food.image}
 		          servings = {food.servings}
               key = {`${index}${food.name}`}
+              handleDelete = {handleDelete}
           />
               
             })
           }
-   
+          {
+        !filterFood.length && (
+          <h2>No Foods to show</h2>
+        )
+      }
 
     </div>
     </>

@@ -22,6 +22,26 @@ function AddFoodForm(props) {
           setShowForm(true)
         }
 
+// TOGGLE!!!!!!!**********
+
+
+// function handleShowForm(){
+//   setShowForm(!showForm)
+// }
+
+
+// -------------OR-----------
+
+        // function handleShowForm(){
+        //   if (showForm) {
+        //     setShowForm(false)
+        //   }
+        //   else {
+        //     setShowForm(true)
+        //   }
+          
+        // }
+
 
 
   return (

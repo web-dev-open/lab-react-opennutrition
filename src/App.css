@@ -1,5 +1,6 @@
 body{
   text-align: center;
+  background-color: rgb(241, 196, 187);
 }
 
 
@@ -16,7 +17,6 @@ li{
 img{
   border: 1px solid transparent;
   border-radius: 40px;
-
 }
 .fomoss{
   
@@ -32,4 +32,7 @@ img{
 .ant-card-head-title{
   color: tomato;
   font-size: 20px;
+}
+button{
+  color: black;
 }

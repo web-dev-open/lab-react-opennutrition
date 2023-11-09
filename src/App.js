@@ -4,7 +4,7 @@ import foods from './foods.json';
 import FoodBox from './components.js/FoodBox';
 import AddFoodForm from './components.js/AddFoodForm';
 import Search from './components.js/Search';
-import {Button,Card,Col,Row, Divider } from 'antd';
+import {Button, Divider } from 'antd';
 
 function App() {
   const [foodss, setFoods] = useState(foods);
@@ -63,26 +63,6 @@ function App() {
       <Search value={filter} handleSubmit={doSomethingElse} />
       <Divider>Food List</Divider>
       <ul className="food-list">{listfood}</ul>
-
-  
-     
-  <Row gutter={16}>
-    <Col span={8}>
-      <Card title="Card title" bordered={false}>
-        Card content
-      </Card>
-    </Col>
-    <Col span={8}>
-      <Card title="Card title" bordered={false}>
-        Card content
-      </Card>
-    </Col>
-    <Col span={8}>
-      <Card title="Card title" bordered={false}>
-        Card content
-      </Card>
-    </Col>
-  </Row>
 
 
     </div>

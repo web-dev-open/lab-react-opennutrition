@@ -38,7 +38,7 @@
   {
     "name": "Hamburger",
     "calories": 400,
-    "image": "https://i.imgur.com/LoG39wK.jpg",
+    "image": "https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?auto=compress&cs=tinysrgb&w=600",
     "servings": 1
   },
   {
@@ -92,13 +92,13 @@
   {
     "name": "Banana",
     "calories": 175,
-    "image": "https://i.imgur.com/BMdJhu5.jpg",
+    "image": "https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?auto=compress&cs=tinysrgb&w=600",
     "servings": 1
   },
   {
     "name": "Yogurt",
     "calories": 125,
-    "image": "https://i.imgur.com/URhdrAm.png",
+    "image": "https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?auto=compress&cs=tinysrgb&w=600",
     "servings": 1
   }
 ]

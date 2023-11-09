@@ -7,7 +7,7 @@ const AddFoodForm = ({handleSubmit}) => {
   
 
   return (
-    <Form onFinish={handleSubmit}>
+      <Form  onFinish={handleSubmit}>
       <Form.Item label="Name" name="name">
         <Input placeholder="Food name" />
       </Form.Item>

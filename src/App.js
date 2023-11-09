@@ -4,6 +4,7 @@ import foods from './foods.json';
 import FoodBox from './components.js/FoodBox';
 import AddFoodForm from './components.js/AddFoodForm';
 import Search from './components.js/Search';
+import {Button,Card,Col,Row, Divider } from 'antd';
 
 function App() {
   const [foodss, setFoods] = useState(foods);
@@ -17,6 +18,7 @@ function App() {
   ));
 
   const deleteFood = (foodToDelete) => {
+    
     const updatedFoods = foodss.filter((f) => f !== foodToDelete);
     setFoods(updatedFoods);
   };
@@ -52,15 +54,37 @@ function App() {
 
   return (
     <div>
-      <h1>Add Food List</h1>
-      <button onClick={toggleForm}>
+      
+      <Button type="primary" onClick={toggleForm}>
         {isFormVisible ? 'Hide Form' : 'Add New Food'}
-      </button>
-      {isFormVisible && <AddFoodForm handleSubmit={doSomething} />}
-      <h1>Search</h1>
+      </Button>
+      {isFormVisible && <div className='fomoss'> <AddFoodForm handleSubmit={doSomething} />  </div> }
+      
       <Search value={filter} handleSubmit={doSomethingElse} />
-      <h1>Food List</h1>
+      <Divider>Food List</Divider>
       <ul className="food-list">{listfood}</ul>
+
+  
+     
+  <Row gutter={16}>
+    <Col span={8}>
+      <Card title="Card title" bordered={false}>
+        Card content
+      </Card>
+    </Col>
+    <Col span={8}>
+      <Card title="Card title" bordered={false}>
+        Card content
+      </Card>
+    </Col>
+    <Col span={8}>
+      <Card title="Card title" bordered={false}>
+        Card content
+      </Card>
+    </Col>
+  </Row>
+
+
     </div>
   );
 }

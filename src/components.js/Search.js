@@ -6,7 +6,7 @@ function Search(props) {
   return (
     <>
       <Divider>Search</Divider>
-      <Input  value={props.value} type="text" onChange = {props.handleSubmit} />
+      <Input label="Image" className="smaller"  value={props.value} type="text" onChange = {props.handleSubmit} />
     </>
   );
 }

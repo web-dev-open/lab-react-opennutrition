@@ -1,3 +1,8 @@
+body{
+  text-align: center;
+}
+
+
 li{
   list-style-type: none;
 }
@@ -8,5 +13,23 @@ li{
   gap: 20px; 
 
 }
+img{
+  border: 1px solid transparent;
+  border-radius: 40px;
 
-
+}
+.fomoss{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+}
+.smaller{
+  width: 200px;
+}
+.ant-card-head-title{
+  color: tomato;
+  font-size: 20px;
+}

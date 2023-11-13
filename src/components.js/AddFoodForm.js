@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, Form, Button } from 'antd';
+ import '../App.css';
 
 const AddFoodForm = ({handleSubmit}) => {
 
@@ -7,6 +8,7 @@ const AddFoodForm = ({handleSubmit}) => {
   
 
   return (
+    <div className="form" >
       <Form  onFinish={handleSubmit}>
       <Form.Item label="Name" name="name">
         <Input placeholder="Food name" />
@@ -26,6 +28,7 @@ const AddFoodForm = ({handleSubmit}) => {
         </Button>
       </Form.Item>
     </Form>
+    </div>
   );
 };
 

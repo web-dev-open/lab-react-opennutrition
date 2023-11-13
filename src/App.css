@@ -1,6 +1,7 @@
 body{
   text-align: center;
   background-color: rgb(241, 196, 187);
+  font-family: 'Outfit', sans-serif;
 }
 
 
@@ -11,19 +12,18 @@ li{
 .food-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
+   
 
 }
 img{
   border: 1px solid transparent;
-  border-radius: 40px;
+  border-radius: 20px;
 }
 .fomoss{
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 500px;
+  width: 600px;
   height: 500px;
 }
 .smaller{
@@ -31,8 +31,9 @@ img{
 }
 .ant-card-head-title{
   color: tomato;
-  font-size: 20px;
+  font-size: 25px;
 }
 button{
   color: black;
 }
+

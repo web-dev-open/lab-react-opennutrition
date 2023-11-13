@@ -7,7 +7,7 @@ function FoodBox({food , deleteStuff}) {
     >
       <Card
         title={food.name}
-        style={{ width: 230, height: 300, margin: 80 , color:'tomato' ,border: '2px solid tomato'  }}
+        style={{ width: 350, height: 300, margin: 40 , color:'tomato' ,border: '2px solid tomato'  }}
       >
         <img src={food.image} height={60} alt="food" />
         <p>Calories : {food.calories}</p>

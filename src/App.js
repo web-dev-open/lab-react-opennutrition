@@ -4,8 +4,8 @@ import foods from './foods.json';
 import FoodBox from './components.js/FoodBox';
 import AddFoodForm from './components.js/AddFoodForm';
 import Search from './components.js/Search';
-import {Button, Divider } from 'antd';
-
+import { Button, Divider } from 'antd';
+import EmptyPage from './components.js/EmptyPage';
 function App() {
   const [foodss, setFoods] = useState(foods);
   const [filter, setFilter] = useState('');
@@ -18,35 +18,33 @@ function App() {
   ));
 
   const deleteFood = (foodToDelete) => {
-    
     const updatedFoods = foodss.filter((f) => f !== foodToDelete);
     setFoods(updatedFoods);
+    
   };
 
-  const doSomething = (e) => {
-    setFoods([...foodss, e]);
+  const doSomething = (newFood) => {
+    setFoods([...foodss, newFood]);
+    
   };
 
-  function setFilterPromise(value) {
-    return new Promise((resolve) => {
-      setFilter(value);
-      resolve(value);
-    });
-  }
+  const applyFilter = (value, foodsToFilter) => {
+    setFilter(value);
+    if (value.trim() === '') {
+      setFoods(foods);
+    } else {
+      setFoods(
+        foodsToFilter.filter((g) =>
+          g.name.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+    }
+  };
 
-  function doSomethingElse(event) {
-    setFilterPromise(event.target.value)
-      .then((value) => {
-        setFoods(
-          foods.filter((g) =>
-            g.name.toLowerCase().includes(value.toLowerCase())
-          )
-        );
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  const doSomethingElse = (event) => {
+    const value = event.target.value;
+    applyFilter(value, foodss);
+  };
 
   const toggleForm = () => {
     setIsFormVisible(!isFormVisible);
@@ -54,17 +52,19 @@ function App() {
 
   return (
     <div>
-      
       <Button type="primary" onClick={toggleForm}>
         {isFormVisible ? 'Hide Form' : 'Add New Food'}
       </Button>
-      {isFormVisible && <div className='fomoss'> <AddFoodForm handleSubmit={doSomething} />  </div> }
-      
+      {isFormVisible && (
+        <div className='fomoss'>
+          <AddFoodForm handleSubmit={doSomething} />
+        </div>
+      )}
+
       <Search value={filter} handleSubmit={doSomethingElse} />
       <Divider>Food List</Divider>
+      {foodss.length === 0 && <EmptyPage />}
       <ul className="food-list">{listfood}</ul>
-
-
     </div>
   );
 }

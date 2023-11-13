@@ -1,38 +1,39 @@
-.App {
+body{
   text-align: center;
+  background-color: rgb(241, 196, 187);
+  font-family: 'Outfit', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+li{
+  list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+   
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+img{
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+.fomoss{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 600px;
+  height: 500px;
+}
+.smaller{
+  width: 200px;
+}
+.ant-card-head-title{
+  color: tomato;
+  font-size: 25px;
+}
+button{
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

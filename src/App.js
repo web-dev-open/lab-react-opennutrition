@@ -1,23 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+//Data
+import foods from "./foods.json";
+
+// Components
+import FoodBox from "./FoodBox";
+import AddFoodForm from "./AddFoodForm";
+import SearchBar from "./SearchBar";
+
+//Ant Design
+import { Row, Divider, Button } from "antd";
+
+// React
+import { useState } from "react";
 
 function App() {
+  const [state, setState] = useState({
+    foods: foods,
+    filteredFoods: foods,
+    addNewFood: false,
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <h1>Food Tracker</h1>
+      <Divider>Add Food Entry</Divider>
+      {state.addNewFood ? (
+        <>
+          <AddFoodForm addFood={setState} />
+          <Button
+            style={{ marginTop: 10 }}
+            type="primary"
+            onClick={() => setState({ ...state, addNewFood: false })}
+          >
+            Hide Form
+          </Button>
+        </>
+      ) : (
+        <Button
+          style={{ marginTop: 10 }}
+          type="primary"
+          onClick={() => setState({ ...state, addNewFood: true })}
         >
-          Learn React
-        </a>
-      </header>
+          Add New Food
+        </Button>
+      )}
+      <Divider>Search</Divider>
+      <SearchBar updateFilteredFoods={setState} />
+      <Row style={{ width: "100%", justifyContent: "center" }}>
+        <Divider>Food List</Divider>
+        {state.filteredFoods.map((food) => (
+          <FoodBox key={food.name} food={food} deleteFood={setState} />
+        ))}
+      </Row>
+      {state.foods.length === 0 && <p>No foods to display</p>}
     </div>
   );
 }

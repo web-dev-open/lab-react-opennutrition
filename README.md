@@ -2,7 +2,11 @@
 
 # LAB | React OpenNutrition
 
-  
+![Screenshot 2023-12-14 134141](https://github.com/Devil-2621/lab-react-opennutrition/assets/119029321/5c372b61-7c50-4209-925f-f90fc32ba50a)
+<hr>
+
+![Screenshot 2023-12-14 134118](https://github.com/Devil-2621/lab-react-opennutrition/assets/119029321/e12ad9dd-dc56-49d3-b4d4-181b6c49572a)
+
 
 ## Introduction
 

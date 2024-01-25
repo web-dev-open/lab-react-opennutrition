@@ -6,10 +6,11 @@ import { useState } from "react";
 import FoodBox from "./components/FoodBox";
 import AddFoodForm from "./components/AddFoodForm";
 import Search from "./components/Search";
-import { Row, Col } from "antd";
+import { Row, Col, Button , Empty } from "antd";
 
 function App() {
   const [foodList, setFoodList] = useState(foods);
+  const [isFormVisible, setIsFormVisible] = useState(true);
 
   // Function to add a new food item to the list
   const handleAddFood = (newFood) => {
@@ -33,24 +34,48 @@ function App() {
     setFoodList(updatedFoodList);
   };
 
+  const handleToggleFormVisibility = () => {
+    console.log("Button is clicked");
+    setIsFormVisible((prev) => !prev);
+  };
+  
+
   return (
     <div className="App">
       <main>
         <Row gutter={[16, 16]}>
           <Col span={12}>
-            <Search onSearch={handleSearch} />
+            {isFormVisible ? (
+              <Search onSearch={handleSearch} />
+            ) : (
+              <Button onClick={handleToggleFormVisibility}>
+                {isFormVisible ? "Hide Form" : "Show Add Food Form"}
+              </Button>
+            )}
           </Col>
           <Col span={12}>
-            <AddFoodForm onAddFood={handleAddFood} />
+            {isFormVisible && <AddFoodForm onAddFood={handleAddFood} />}
           </Col>
         </Row>
         <Row gutter={[16, 16]}>
           {foodList.map((food) => (
             <Col key={food.id} span={8}>
-            <FoodBox food={food} onDelete={handleDeleteFood} />
-
+              <FoodBox food={food} onDelete={handleDeleteFood} />
             </Col>
           ))}
+        </Row>
+        <Row gutter={[16, 16]}>
+          {foodList.length === 0 ? (
+            <Col span={24}>
+              <Empty description="No food items available" />
+            </Col>
+          ) : (
+            foodList.map((food) => (
+              <Col key={food.id} span={8}>
+                <FoodBox food={food} onDelete={handleDeleteFood} />
+              </Col>
+            ))
+          )}
         </Row>
       </main>
     </div>

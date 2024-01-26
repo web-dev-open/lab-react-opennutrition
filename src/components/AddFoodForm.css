@@ -1,0 +1,26 @@
+.foodForm {
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 0px;
+
+    width: 500px;
+    height: fit-content;
+
+    border: solid black 1px;
+    border-radius: 15px;
+}
+
+label {
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.createButton {
+    margin: 20px;
+    margin-left: 0px;
+}
